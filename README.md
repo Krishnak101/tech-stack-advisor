@@ -14,8 +14,6 @@ duplicable: true
 
 **Tech Stack Advisor** is a hands-on machine learning project designed to teach you how to build, containerize, and deploy an ML-powered web application using Docker and Hugging Face Spaces.
 
-> 🎯 This project is part of the **"Artificial Intelligence and Machine Learning (AI/ML) with Docker"** course from **School of DevOps**.
-
 ---
 
 ## 🚀 What You'll Learn
@@ -42,25 +40,31 @@ tech-stack-advisor/
 ├── LICENSE            # Apache 2.0 license
 └── README.md          # This guide
 
-````
+```
 
 ---
 
 ## 🧠 Step 1: Setup and Train Your ML Model
 
-1. **Clone the repository**
+1. **Fork and then Clone the repository**
 
 ```bash
 git clone https://github.com/<your-username>/tech-stack-advisor.git
 cd tech-stack-advisor
-````
+```
 
-2. **Install dependencies**
-
-(Optional: Use a virtual environment)
+2. **Create A Virtual Environment**
 
 ```bash
-pip install -r requirements.txt
+uv venv --python 3.11
+source .venv/bin/activate  # macOS/Linux
+.venv\Scripts\activate     # Windows
+```
+
+**Install dependencies**
+
+```bash
+uv pip install -r requirements.txt
 ```
 
 3. **Train the model**
@@ -71,8 +75,8 @@ python train.py
 
 This creates:
 
-* `model.pkl`: the trained ML model
-* `encoders.pkl`: label encoders for input/output features
+- `model.pkl`: the trained ML model
+- `encoders.pkl`: label encoders for input/output features
 
 ---
 
@@ -156,18 +160,18 @@ docker push <your-dockerhub-username>/tech-stack-advisor:latest
 1. Go to [huggingface.co/spaces](https://huggingface.co/spaces)
 2. Click **Create New Space**
 3. Select:
+   - **SDK**: Docker
+   - **Repository**: Link to your GitHub repo with the Dockerfile
 
-   * **SDK**: Docker
-   * **Repository**: Link to your GitHub repo with the Dockerfile
 4. Hugging Face will auto-build and deploy your container.
 
 ---
 
 ## 🧪 Test Your Skills
 
-* Can you swap the model in `train.py` for a `LogisticRegression` model?
-* Can you add logging to show which inputs were passed?
-* Try changing the Gradio layout or theme!
+- Can you swap the model in `train.py` for a `LogisticRegression` model?
+- Can you add logging to show which inputs were passed?
+- Try changing the Gradio layout or theme!
 
 ---
 
@@ -185,4 +189,3 @@ Created by \[Gourav Shah](https://www.linkedin.com/in/gouravshah) as part of the
 ---
 
 > 🛠 Happy shipping, DevOps and MLOps builders!
-
