@@ -1,1 +1,3 @@
 .venv/
+encoders.pkl
+model.pkl
